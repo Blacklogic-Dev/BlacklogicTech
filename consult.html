@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlackLogic Consult</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+  body { background:#000; color:#fff; overflow-x:hidden; }
+
+  /* Header & Logo */
+  .consult-header { text-align:center; padding:40px 20px; }
+  .consult-header h1 { color:#00ffff; font-size:2rem; margin-bottom:15px; }
+  .consult-header img { width:250px; height:auto; margin-bottom:20px; }
+
+  /* Projects Grid */
+  .projects-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:30px; padding:20px; max-width:1200px; margin:0 auto; }
+  .project-card { background: rgba(255,255,255,0.05); border:2px solid #555; border-radius:15px; padding:15px; transition: all 0.3s ease; cursor:pointer; text-align:center; }
+  .project-card:hover { border-color:#00ffff; box-shadow:0 0 20px #00ffff; background: rgba(0,255,255,0.1); }
+  .project-card img { width:100%; height:auto; object-fit:cover; border-radius:12px; margin-bottom:10px; }
+  .project-card h3 { color:#00ffff; margin-bottom:5px; font-size:1.1rem; }
+  .project-card p { color:#ccc; font-size:0.9rem; }
+  /* Live Button */
+  .project-card .live-btn { display:inline-block; margin-top:10px; padding:8px 20px; background:#00ffff; color:#000; text-decoration:none; font-weight:bold; border-radius:25px; transition:all 0.3s ease; }
+  .project-card .live-btn:hover { background:#00e5ff; box-shadow:0 0 15px #00ffff; }
+
+  /* Consult Form */
+  .consult-form { max-width:600px; margin:50px auto; background: rgba(255,255,255,0.05); padding:30px; border-radius:15px; border:2px solid #555; }
+  .consult-form h2 { color:#00ffff; margin-bottom:20px; text-align:center; }
+  .consult-form label { display:block; margin-bottom:5px; color:#ccc; font-size:0.9rem; }
+  .consult-form input, .consult-form select, .consult-form textarea { width:100%; padding:10px; margin-bottom:15px; border-radius:8px; border:1px solid #555; background:rgba(255,255,255,0.05); color:#fff; font-size:0.95rem; }
+  .consult-form textarea { resize:none; height:100px; }
+  .consult-form button { width:100%; padding:12px; background:#00ffff; color:#000; border:none; border-radius:25px; font-weight:bold; font-size:1rem; cursor:pointer; transition:all 0.3s ease; }
+  .consult-form button:hover { background:#00e5ff; box-shadow:0 0 15px #00ffff; }
+
+  /* Bottom Navigation */
+  .bottom-nav { position:fixed; bottom:0; width:100%; background:#111; display:flex; justify-content:space-around; align-items:center; padding:10px 0; border-top:2px solid #00ffff; z-index:1000; }
+  .bottom-nav a { color:#ccc; text-decoration:none; text-align:center; font-size:0.9rem; display:flex; flex-direction:column; align-items:center; transition: all 0.3s ease; }
+  .bottom-nav a i { font-size:1.5rem; margin-bottom:5px; }
+  .bottom-nav a:hover { color:#00ffff; }
+
+  @media(max-width:500px){ .project-card img{height:150px;} }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<section class="consult-header">
+  <h1>Project & Consult</h1>
+  <img src="BlackLogic.png" alt="BlackLogic Logo">
+</section>
+
+<!-- Projects Grid -->
+<section class="projects-grid">
+  <div class="project-card">
+    <img src="Logo.jpg" alt="Black Empowerment App">
+    <h3>BLACK EMPOWERMENT ONLINE APPLICATION</h3>
+    <p>For application to Universities and Colleges</p>
+    <a href="https://blacklogic-dev.github.io/BlackEmpowermentApplicationv2.0p" target="_blank" class="live-btn">Live</a>
+  </div>
+  <div class="project-card">
+    <img src="IT.jpg" alt="ITVIBEZ">
+    <h3>ITVIBEZ</h3>
+    <p>Your AI coding learning hub</p>
+    <a href="https://blacklogic-dev.github.io/ITVibes/" class="live-btn">Live</a>
+  </div>
+  <div class="project-card">
+    <img src="caller.jpg" alt="ICALLER">
+    <h3>ICALLER</h3>
+    <p>Data call and video call service</p>
+    <a href="https://blacklogic-dev.github.io/iCALLER/index.html" class="live-btn">Live</a>
+  </div>
+  <div class="project-card">
+    <img src="Money.jpg" alt="INYUKU">
+    <h3>INYUKU</h3>
+    <p>Instant payment app</p>
+    <a href="https://blacklogic-dev.github.io/iNYUKU/" class="live-btn">Live</a>
+  </div>
+</section>
+
+<!-- Consult Form -->
+<section class="consult-form">
+  <h2>Send Us a Message</h2>
+  <form id="consultForm">
+    <label for="name">Name</label>
+    <input type="text" id="name" required>
+
+    <label for="surname">Surname</label>
+    <input type="text" id="surname" required>
+
+    <label for="title">Title</label>
+    <input type="text" id="title">
+
+    <label for="age">Age</label>
+    <input type="number" id="age">
+
+    <label for="type">Type of Consultation</label>
+    <select id="type">
+      <option value="Software">Software</option>
+      <option value="Design">Design</option>
+      <option value="Business">Business</option>
+    </select>
+
+    <label for="message">Message</label>
+    <textarea id="message" placeholder="Your message..."></textarea>
+
+    <button type="submit">Send via WhatsApp</button>
+  </form>
+</section>
+
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+  <a href="index.html"><i class="fas fa-home"></i>Home</a>
+  <a href="about.html"><i class="fas fa-user"></i>About</a>
+  <a href="services.html"><i class="fas fa-cogs"></i>Service</a>
+  <a href="consult.html"><i class="fas fa-comments"></i>Consult</a>
+</nav>
+
+<script>
+  // WhatsApp form submit
+  document.getElementById('consultForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const surname = document.getElementById('surname').value;
+    const title = document.getElementById('title').value;
+    const age = document.getElementById('age').value;
+    const type = document.getElementById('type').value;
+    const message = document.getElementById('message').value;
+
+    const text = `Hello BlackLogic!%0AName: ${name} ${surname}%0ATitle: ${title}%0AAge: ${age}%0AConsult Type: ${type}%0AMessage: ${message}`;
+    const phone = "0606614909"; // WhatsApp number
+    window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+  });
+</script>
+
+</body>
+</html>

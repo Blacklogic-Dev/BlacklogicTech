@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlackLogic Technologies</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+  body { background:#000; color:#fff; line-height:1.6; overflow-x:hidden; }
+
+  header { text-align:center; padding:50px 20px 40px 20px; position:relative; overflow:hidden; }
+  .logo { width:100%; max-width:300px; height:300px; object-fit:contain; animation:breathe 3s infinite; margin:0 auto 20px; transition: transform 0.3s ease-out; }
+  @keyframes breathe { 0%,100%{transform:scale(1); opacity:1;} 50%{transform:scale(1.1); opacity:0.7;} }
+
+  .typewriter { display:inline-block; font-family:'Courier New', monospace; font-size:1.2rem; border-right:2px solid #fff; white-space:nowrap; overflow:hidden; width:auto; }
+  .hero-desc { color:#ccc; margin-top:15px; font-size:1rem; max-width:500px; margin-left:auto;margin-right:auto; }
+
+  .grid { display:grid; gap:30px; justify-content:center; margin:40px 20px; }
+  .grid-4x { grid-template-columns: repeat(2, minmax(120px, 1fr)); max-width:500px; margin:0 auto; text-align:center; }
+
+  .card {
+    border:2px solid #555;
+    padding:20px;
+    border-radius:12px;
+    cursor:pointer;
+    transition: all 0.3s ease;
+    color:#fff;
+    background: rgba(255,255,255,0.05);
+  }
+  .card:hover { border-color:#00ffff; transform:scale(1.05); }
+  .card.active { border-color:#00ffff; background: rgba(0,255,255,0.1); }
+  .card i { font-size:3rem; margin-bottom:10px; transition: color 0.3s, text-shadow 0.3s; }
+  .card.active i { color:#00ffff; text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff; }
+
+  .card p { margin:0; font-size:1rem; }
+
+  .about-text, .company-info { text-align:center; max-width:600px; margin:20px auto; font-size:1rem; line-height:1.5; color:#ccc; }
+
+  .cta-button { display:inline-block; background:#fff; color:#000; padding:15px 40px; font-size:1rem; border:none; border-radius:50px; cursor:pointer; transition: transform 0.3s, box-shadow 0.3s; margin-bottom:50px; font-weight:600; text-decoration:none; }
+  .cta-button:hover { transform:scale(1.05); box-shadow:0 5px 15px rgba(255,255,255,0.3); }
+
+  @media(max-width:500px){ .logo{height:200px;} .typewriter{font-size:1rem;} .hero-desc{font-size:0.9rem;} .card i{font-size:2.2rem;} .cta-button{padding:12px 30px;font-size:0.9rem;} }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="BlackLogic.png" alt="BlackLogic Logo" class="logo" id="logo">
+  <div class="typewriter" id="typewriter"></div>
+  <div class="hero-desc">Innovating the future with cutting-edge software and hardware solutions.</div>
+</header>
+
+<!-- About Us Grid -->
+<section class="about">
+  <div class="grid grid-4x" id="aboutGrid">
+    <div class="card" data-desc="High-performance computers for every need."><i class="fas fa-computer"></i><p>Computer</p></div>
+    <div class="card" data-desc="State-of-the-art hardware components."><i class="fas fa-microchip"></i><p>Hardware</p></div>
+    <div class="card" data-desc="Secure and scalable databases."><i class="fas fa-database"></i><p>Database</p></div>
+    <div class="card" data-desc="Advanced AI solutions."><i class="fas fa-robot"></i><p>AI</p></div>
+  </div>
+  <div class="about-text" id="aboutDesc">Click on an icon to see the description.</div>
+  <div class="company-info">BlackLogic Technologies is a Software and Hardware Manufacturing company established in 2025.</div>
+</section>
+
+<!-- Specialization Grid -->
+<section class="focus">
+  <div class="grid grid-4x" id="specialGrid">
+    <div class="card"><i class="fas fa-code"></i><p>Software</p></div>
+    <div class="card"><i class="fas fa-cloud"></i><p>Cloud</p></div>
+    <div class="card"><i class="fas fa-pencil-ruler"></i><p>Design</p></div>
+    <div class="card"><i class="fas fa-brain"></i><p>ML</p></div>
+  </div>
+  <div style="text-align:center;">
+    <a href="landing.html" class="cta-button">Explore</a>
+  </div>
+</section>
+
+<script>
+  // Parallax logo
+  const logo = document.getElementById("logo");
+  window.addEventListener("scroll", () => {
+    let offset = window.pageYOffset;
+    logo.style.transform = `translateY(${offset * 0.2}px) scale(1.05)`;
+  });
+
+  // Typewriter loop
+  const typewriterText = "Software & Hardware Company";
+  const typewriter = document.getElementById("typewriter");
+  let i = 0, deleting = false;
+  function typeLoop() {
+    if(!deleting){
+      typewriter.innerHTML = typewriterText.substring(0,i);
+      i++;
+      if(i>typewriterText.length){deleting=true; setTimeout(typeLoop,2000); return;}
+    } else {
+      typewriter.innerHTML = typewriterText.substring(0,i);
+      i--;
+      if(i<0) deleting=false;
+    }
+    setTimeout(typeLoop,deleting?50:100);
+  }
+  typeLoop();
+
+  // About Us and Specialization click effect
+  function setupCards(gridId, showDesc=false) {
+    const cards = document.querySelectorAll(`#${gridId} .card`);
+    const desc = document.getElementById("aboutDesc");
+    cards.forEach(card=>{
+      card.addEventListener("click",()=>{
+        cards.forEach(c=>c.classList.remove("active"));
+        card.classList.add("active");
+        if(showDesc) desc.textContent = card.getAttribute("data-desc");
+      });
+    });
+  }
+
+  setupCards("aboutGrid", true);   // First 4 icons show description
+  setupCards("specialGrid");        // Last 4 just glow
+</script>
+
+</body>
+</html>

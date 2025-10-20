@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlackLogic Services</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+  body { background:#000; color:#fff; overflow-x:hidden; }
+
+  /* Header */
+  .services-header { text-align:center; padding:40px 20px; }
+  .services-header img.logo { width:200px; height:auto; margin-bottom:20px; }
+  .services-header h1 { color:#00ffff; font-size:2rem; margin-bottom:10px; }
+  .services-header p { color:#ccc; max-width:700px; margin:0 auto; font-size:1rem; }
+
+  /* Services Grid */
+  .services-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:30px; padding:40px 20px; max-width:1200px; margin:0 auto; }
+
+  /* Service Card */
+  .service-card { 
+    background: rgba(255,255,255,0.05); 
+    border:2px solid #555; 
+    border-radius:15px; 
+    padding:20px; 
+    transition: all 0.3s ease; 
+    overflow:hidden; 
+    position:relative;
+  }
+  .service-card:hover { border-color:#00ffff; box-shadow: 0 0 20px #00ffff; background: rgba(0,255,255,0.1); }
+  .service-card img { width:100%; height:250px; object-fit:cover; border-radius:12px; margin-bottom:15px; }
+
+  .service-card h3 { color:#00ffff; margin-bottom:15px; font-size:1.2rem; text-align:center; }
+  .service-card ul { list-style:none; padding-left:0; }
+  .service-card ul li { margin-bottom:10px; display:flex; align-items:flex-start; }
+  .service-card ul li i { color:#00ffff; margin-right:10px; font-size:1rem; min-width:20px; text-align:center; }
+  .service-card ul li span { color:#ccc; font-size:0.95rem; line-height:1.3; }
+
+  /* Bottom Navigation */
+  .bottom-nav { position:fixed; bottom:0; width:100%; background:#111; display:flex; justify-content:space-around; align-items:center; padding:10px 0; border-top:2px solid #00ffff; z-index:1000; }
+  .bottom-nav a { color:#ccc; text-decoration:none; text-align:center; font-size:0.9rem; display:flex; flex-direction:column; align-items:center; transition: all 0.3s ease; }
+  .bottom-nav a i { font-size:1.5rem; margin-bottom:5px; }
+  .bottom-nav a:hover { color:#00ffff; }
+
+  @media(max-width:500px){ .service-card img{height:200px;} }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<section class="services-header">
+  <img src="BlackLogic.png" alt="BlackLogic Logo" class="logo">
+  <h1>Our Services</h1>
+  <p>We currently offer Software products and services as listed below.</p>
+</section>
+
+<!-- Services Grid -->
+<section class="services-grid">
+
+  <!-- Service 1 -->
+  <div class="service-card">
+    <img src="AI.jpg" alt="Artificial Intelligence">
+    <h3>Artificial Intelligence</h3>
+    <ul>
+      <li><i class="fas fa-robot"></i><span>Pre-trained AI chatbot</span></li>
+      <li><i class="fas fa-user-robot"></i><span>Personalized AI solutions</span></li>
+      <li><i class="fas fa-briefcase"></i><span>Business AI applications</span></li>
+      <li><i class="fas fa-lightbulb"></i><span>Educational and exploration AI</span></li>
+    </ul>
+  </div>
+
+  <!-- Service 2 -->
+  <div class="service-card">
+    <img src="ML.jpg" alt="Machine Learning">
+    <h3>Machine Learning & Automation</h3>
+    <ul>
+      <li><i class="fas fa-robot"></i><span>AI recommendation systems using ML</span></li>
+      <li><i class="fas fa-chart-line"></i><span>ML for predictive analysis</span></li>
+      <li><i class="fas fa-shield-alt"></i><span>ML for fraud detection</span></li>
+    </ul>
+  </div>
+
+  <!-- Service 3 -->
+  <div class="service-card">
+    <img src="Full.jpg" alt="Full Stack Development">
+    <h3>Full Stack Development</h3>
+    <ul>
+      <li><i class="fas fa-code"></i><span>Frontend & Backend development</span></li>
+      <li><i class="fas fa-link"></i><span>API, Google Maps & Social Media Integration</span></li>
+      <li><i class="fas fa-cloud"></i><span>Payment integration & cloud deployment</span></li>
+    </ul>
+  </div>
+
+  <!-- Service 4 -->
+  <div class="service-card">
+    <img src="design.jpg" alt="Design & Branding">
+    <h3>Design & Branding</h3>
+    <ul>
+      <li><i class="fas fa-pencil-ruler"></i><span>UX/UI high quality design</span></li>
+      <li><i class="fas fa-paint-brush"></i><span>Artificial logo design</span></li>
+      <li><i class="fas fa-image"></i><span>Graphic design high resolution</span></li>
+    </ul>
+  </div>
+
+  <!-- Service 5 -->
+  <div class="service-card">
+    <img src="Business.jpg" alt="AI in Business">
+    <h3>AI in Business</h3>
+    <ul>
+      <li><i class="fas fa-headset"></i><span>AI for customer service</span></li>
+      <li><i class="fas fa-bullhorn"></i><span>Digital marketing AI</span></li>
+      <li><i class="fas fa-chart-pie"></i><span>Business analytics & insights</span></li>
+    </ul>
+  </div>
+
+  <!-- Service 6 -->
+  <div class="service-card">
+    <img src="cloud.jpg" alt="Cloud Computing">
+    <h3>Cloud Computing & Scaling</h3>
+    <ul>
+      <li><i class="fas fa-server"></i><span>Cloud server setup</span></li>
+      <li><i class="fas fa-shield-alt"></i><span>Database security in cloud</span></li>
+      <li><i class="fas fa-globe"></i><span>Global scaling across regions</span></li>
+    </ul>
+  </div>
+
+</section>
+
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+  <a href="landing.html"><i class="fas fa-home"></i>Home</a>
+  <a href="about.html"><i class="fas fa-user"></i>About</a>
+  <a href="service.html"><i class="fas fa-cogs"></i>Service</a>
+  <a href="#"><i class="fas fa-comments"></i>Consult</a>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlackLogic Landing</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+  body { background:#000; color:#fff; overflow-x:hidden; }
+
+  /* Banner */
+  .banner { 
+    width:100%; height:300px; 
+    background: url('Land.png') center/cover no-repeat;
+    display:block; 
+  }
+
+  /* Banner text below */
+  .banner-text-below { 
+    text-align:center; 
+    margin:20px 0; 
+  }
+  .banner-text-below h1 { font-size:2rem; color:#00ffff; margin-bottom:10px; }
+  .banner-text-below p { color:#ccc; font-size:1rem; }
+
+  /* Grids */
+  .grid-section { display:grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap:30px; padding:40px 20px; max-width:1000px; margin:0 auto; }
+  .card { 
+    background: rgba(255,255,255,0.05); 
+    border:2px solid #555; 
+    border-radius:12px; 
+    padding:20px; 
+    text-align:center; 
+    cursor:pointer; 
+    transition: all 0.3s ease; 
+  }
+  .card:hover, .card.active { border-color:#00ffff; background: rgba(0,255,255,0.1); }
+  .card i { font-size:3rem; margin-bottom:10px; color:#fff; transition: all 0.3s; }
+  .card.active i { color:#00ffff; text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff; }
+  .card h3 { margin-bottom:10px; color:#fff; font-size:1.2rem; }
+  .card p { color:#ccc; font-size:0.95rem; }
+
+  /* Bottom Navigation */
+  .bottom-nav { position:fixed; bottom:0; width:100%; background:#111; display:flex; justify-content:space-around; align-items:center; padding:10px 0; border-top:2px solid #00ffff; }
+  .bottom-nav a { color:#ccc; text-decoration:none; text-align:center; font-size:0.9rem; display:flex; flex-direction:column; align-items:center; transition: all 0.3s ease; }
+  .bottom-nav a i { font-size:1.5rem; margin-bottom:5px; }
+  .bottom-nav a:hover { color:#00ffff; }
+  
+  @media(max-width:500px){ 
+    .banner-text-below h1{font-size:1.5rem;} 
+    .banner-text-below p{font-size:0.9rem;} 
+    .card i{font-size:2.2rem;} 
+  }
+</style>
+</head>
+<body>
+
+<!-- Banner -->
+<section class="banner"></section>
+
+<!-- Banner Text Below -->
+<div class="banner-text-below">
+    <h1>Welcome to BlackLogic Technologies</h1>
+    <p>Innovating the future with software and hardware solutions.</p>
+</div>
+
+<!-- Grids -->
+<section class="grid-section" id="gridSection">
+  <div class="card" data-desc="High quality software products.">
+    <i class="fas fa-code"></i>
+    <h3>Software</h3>
+    <p>High-quality software products</p>
+  </div>
+  <div class="card" data-desc="Advanced hardware for modern tech.">
+    <i class="fas fa-microchip"></i>
+    <h3>Hardware</h3>
+    <p>Advanced hardware solutions</p>
+  </div>
+  <div class="card" data-desc="Cloud and AI solutions.">
+    <i class="fas fa-cloud"></i>
+    <h3>Cloud & AI</h3>
+    <p>Innovative cloud & AI systems</p>
+  </div>
+  <div class="card" data-desc="Design and ML applications.">
+    <i class="fas fa-pencil-ruler"></i>
+    <h3>Design & ML</h3>
+    <p>Creative design & ML applications</p>
+  </div>
+</section>
+
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+  <a href="landing.html"><i class="fas fa-home"></i>Home</a>
+  <a href="about.html"><i class="fas fa-user"></i>About</a>
+  <a href="service.html"><i class="fas fa-cogs"></i>Service</a>
+  <a href="#"><i class="fas fa-comments"></i>Consult</a>
+</nav>
+
+<script>
+  // Card click effect
+  const cards = document.querySelectorAll(".grid-section .card");
+  cards.forEach(card=>{
+    card.addEventListener("click",()=>{
+      cards.forEach(c=>c.classList.remove("active"));
+      card.classList.add("active");
+      // Optional: Show description somewhere
+      console.log(card.getAttribute("data-desc"));
+    });
+  });
+</script>
+
+</body>
+</html>
