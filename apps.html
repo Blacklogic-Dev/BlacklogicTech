@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlackLogic Top 5 Apps</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+  body { background:#000; color:#fff; overflow-x:hidden; }/* Side Drawer */ .hamburger { position:fixed; top:20px; left:20px; font-size:2rem; color:#00ffff; cursor:pointer; z-index:1001; } .side-drawer { position:fixed; top:0; left:-250px; width:250px; height:100%; background:#111; padding-top:60px; transition: left 0.3s ease; z-index:1000; } .side-drawer a { display:flex; align-items:center; padding:15px 20px; color:#ccc; text-decoration:none; font-size:1rem; transition:0.3s; } .side-drawer a i { margin-right:15px; font-size:1.2rem; } .side-drawer a:hover { color:#00ffff; } .drawer-open { left:0; }
+
+/* App Grids */ .grid-section { display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:30px; padding:40px 20px; max-width:1200px; margin:0 auto; } .card { background: rgba(255,255,255,0.05); border:2px solid #555; border-radius:12px; padding:20px; text-align:center; cursor:pointer; transition: all 0.3s ease; } .card:hover, .card.active { border-color:#00ffff; background: rgba(0,255,255,0.1); } .card img { width:100%; height:300px; object-fit:cover; border-radius:12px; } .card h3 { margin-top:10px; color:#00ffff; font-size:1.2rem; } .card p { color:#ccc; font-size:0.95rem; margin:5px 0; } .card a { display:inline-block; margin-top:10px; padding:8px 20px; background:#00ffff; color:#000; border-radius:8px; text-decoration:none; font-weight:600; transition:0.3s; } .card a:hover { background:#00bbbb; }
+
+@media(max-width:500px){ .card img{height:200px;} } </style>
+
+</head>
+<body><!-- Hamburger Menu --><div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+<nav class="side-drawer" id="sideDrawer">
+  <a href="index.html"><i class="fas fa-home"></i>Home</a>
+  <a href="products.html"><i class="fas fa-box"></i>Products</a>
+  <a href="apps.html"><i class="fas fa-star"></i>Top 5 Apps</a>
+  <a href="about.html"><i class="fas fa-user"></i>About Us</a>
+  <a href="consult.html"><i class="fas fa-comments"></i>Consult Us</a>
+</nav><section class="grid-section">
+  <div class="card">
+    <img src="Logic.jpg" alt="AsaLogicCare">
+    <h3>AsaLogicCare</h3>
+    <p>Your Digital Safe Space</p>
+    <p>Sector: Healthcare</p>
+    <a href="https://blacklogic-dev.github.io/AsaLogicCare/" target="_blank">View</a>
+  </div>  <div class="card">
+    <img src="LogicBank2.0.png" alt="LogicBank">
+    <h3>LogicBank</h3>
+    <p>Your Digital World Bank</p>
+    <p>Sector: Fintech</p>
+    <a href="https://blacklogic-dev.github.io/LogicBank-v2.2/" target="_blank">View</a>
+  </div>  <div class="card">
+    <img src="Caller.jpg" alt="iCaller">
+    <h3>iCaller</h3>
+    <p>Your Data and Video Call</p>
+    <p>Sector: Telecommunications</p>
+    <a href="https://blacklogic-dev.github.io/iCALLER/index.html" target="_blank">View</a>
+  </div>  <div class="card">
+    <img src="RoyalX.png" alt="RoyalLogic Estate">
+    <h3>RoyalLogic Estate</h3>
+    <p>Your Home or Properties</p>
+    <p>Sector: Properties and Estate</p>
+    <a href="https://blacklogic-dev.github.io/RoyalLogic/" target="_blank">View</a>
+  </div>  <div class="card">
+    <img src="World.png" alt="Doughnut World">
+    <h3>Doughnut World</h3>
+    <p>Digital World of Skills</p>
+    <p>Sector: Digital Marketing</p>
+    <a href="https://blacklogic-dev.github.io/Doughnut-World/" target="_blank">View</a>
+  </div>
+</section><script>
+  const hamburger = document.getElementById('hamburger');
+  const sideDrawer = document.getElementById('sideDrawer');
+
+  hamburger.addEventListener('click', ()=>{
+    sideDrawer.classList.toggle('drawer-open');
+  });
+</script></body>
+</html>

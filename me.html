@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sample Clinic Note — Siyaphumelela Project (SAMPLE)</title>
+<style>
+  /* Printable A4 layout */
+  @page { size: A4; margin: 20mm; }
+  body {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f5f5f7;
+    padding: 0;
+    margin: 0;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 10mm auto;
+    background: white;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.15);
+    position: relative;
+    padding: 28mm 22mm;
+    box-sizing: border-box;
+  }
+
+  /* watermark */
+  .watermark {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(-30deg);
+    font-size: 44px;
+    color: rgba(0,0,0,0.06);
+    letter-spacing: 6px;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  header {
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    margin-bottom: 8mm;
+  }
+
+  .clinic-left {
+    max-width: 60%;
+  }
+
+  .clinic-left h1 {
+    margin:0;
+    font-size:20px;
+    color:#222;
+    letter-spacing:0.6px;
+  }
+  .clinic-left p {
+    margin:4px 0 0 0;
+    font-size:12px;
+    color:#333;
+  }
+
+  .clinic-right {
+    text-align:right;
+    font-size:12px;
+    color:#222;
+  }
+  .clinic-right .ref {
+    font-weight:700;
+    color:#111;
+    font-size:14px;
+  }
+
+  hr { border:none; border-top:1px solid #ddd; margin:12px 0 18px 0; }
+
+  .form-grid { display:grid; grid-template-columns: 1fr 1fr; gap:12px 18px; margin-bottom:12px; }
+  .form-row {
+    font-size:13px;
+    color:#222;
+  }
+  .label { font-weight:600; color:#333; margin-bottom:6px; display:block; font-size:12px; }
+  .value {
+    background: #fafafa;
+    border: 1px dashed #dcdcdc;
+    padding:10px;
+    border-radius:6px;
+    color:#111;
+    min-height:32px;
+  }
+
+  .notes {
+    margin-top:8px;
+  }
+
+  /* stamp */
+  .stamp {
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:6px solid rgba(0,0,0,0.12);
+    position: absolute;
+    right: 36mm;
+    top: 28mm;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    font-size:12px;
+    color:#222;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+  .stamp .date { font-weight:700; font-size:13px; color:#111; margin-top:6px; }
+  .stamp .line { width:70%; height:1px; background:#ccc; margin:6px 0; }
+
+  .footer {
+    margin-top:28px;
+    font-size:12px;
+    color:#444;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  /* printable adjustments */
+  @media print {
+    body { background: white; }
+    .page { box-shadow:none; margin:0; }
+    .watermark { color: rgba(0,0,0,0.04); }
+  }
+
+  /* accessibility */
+  .sr { position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+</style>
+</head>
+<body>
+  <div class="page" role="document" aria-label="Sample clinic document — educational use only">
+    <div class="watermark">SAMPLE - FOR EDUCATIONAL USE ONLY</div>
+
+    <header>
+      <div class="clinic-left">
+        <h1>MIDDELBURG CLINIC</h1>
+        <p><strong>Address:</strong> Middleburg Clinic, [INSERT OFFICIAL ADDRESS HERE — e.g. 12 Main St, Middleburg, Mpumalanga]</p>
+        <p><strong>Tel:</strong> [insert phone] &nbsp; | &nbsp; <strong>Email:</strong> [insert email]</p>
+      </div>
+
+      <div class="clinic-right">
+        <div class="ref">PATIENT NO: 5/96/65</div>
+        <div style="margin-top:8px;">DOC REF: S 948799</div>
+      </div>
+    </header>
+
+    <hr />
+
+    <section aria-labelledby="patient-section">
+      <h2 id="patient-section" class="sr">Patient details</h2>
+      <div class="form-grid">
+        <div>
+          <div class="label">Patient Name</div>
+          <div class="value">Musi Fihile Mathu</div>
+        </div>
+        <div>
+          <div class="label">Date attended</div>
+          <div class="value">11/08/2025</div>
+        </div>
+
+        <div>
+          <div class="label">Complaint / Suffering from</div>
+          <div class="value">UI injury</div>
+        </div>
+        <div>
+          <div class="label">Fit to resume duties on</div>
+          <div class="value">12/08/2025</div>
+        </div>
+      </div>
+
+      <div class="notes">
+        <div class="label">Notes</div>
+        <div class="value" style="min-height:68px;">
+          Patient was attended to at this institution on 11/08/2025 — assessment: minor injury. Referral / further treatment: none required. (Sample note for educational use.)
+        </div>
+      </div>
+    </section>
+
+    <!-- simulated official stamp -->
+    <div class="stamp" aria-hidden="true">
+      <div style="font-size:11px;">MPUMALANGA PROV.</div>
+      <div style="font-size:11px;">MIDDELBURG CLINIC</div>
+      <div class="line"></div>
+      <div class="date">2025-10-23</div>
+    </div>
+
+    <div class="footer">
+      <div>
+        <div class="label">Medical Officer</div>
+        <div class="value" style="display:inline-block; min-width:220px;">Dr. [Name] &nbsp; &nbsp; Signature: ____________________</div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:11px;color:#666;">Printed for school project</div>
+        <div style="font-size:11px;color:#666;">Document is SAMPLE — not an official medical record</div>
+      </div>
+    </div>
+  </div>
+
+  <p style="text-align:center; font-size:12px; color:#444; margin-top:8px;">
+    To use: save this file, open in browser, replace the bracketed address/phone/name with the real details if needed, then Print → Save as PDF.
+  </p>
+</body>
+</html>
